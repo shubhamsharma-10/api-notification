@@ -36,3 +36,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/user-notification-preferences.git
 cd user-notification-preferences
+```
+## Documentation
+This document provides a detailed overview of the app, including its problem statement and the approach used to solve it
+[API notification](https://honeysuckle-minnow-ddb.notion.site/User-Notification-Preferences-API-Documentation-1468cec1eb038059bfced3808cf747e1)
