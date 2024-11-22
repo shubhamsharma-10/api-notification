@@ -44,3 +44,5 @@ docs/
 
 # Debugger configurations
 .vscode/launch.json
+
+.vercel
