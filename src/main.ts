@@ -12,6 +12,7 @@ async function bootstrap() {
     .setDescription('API for managing user notification preferences')
     .setVersion('1.0')
     .addTag('preferences')
+    .addServer('https://api-notification-k9ln3f1w6-shubham-sharmas-projects-dea5e0e3.vercel.app') 
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
