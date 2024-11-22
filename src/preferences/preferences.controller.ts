@@ -15,6 +15,7 @@ export class PreferencesController {
     description: 'Preferences created successfully',
     type: CreatePreferenceDto 
   })
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Invalid input' })
   create(@Body() createPreferenceDto: CreatePreferenceDto) {
     return this.preferencesService.create(createPreferenceDto);
   }
@@ -26,6 +27,7 @@ export class PreferencesController {
     description: 'Preferences retrieved successfully',
     type: CreatePreferenceDto
   })
+  @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'User preferences not found' })
   findOne(@Param('userId') userId: string) {
     return this.preferencesService.findOne(userId);
   }
@@ -37,6 +39,8 @@ export class PreferencesController {
     description: 'Preferences updated successfully',
     type: CreatePreferenceDto
   })
+  @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'User preferences not found' })
+  @ApiResponse({ status: HttpStatus.BAD_REQUEST, description: 'Invalid input' })
   update(@Param('userId') userId: string, @Body() updateData: Partial<CreatePreferenceDto>) {
     return this.preferencesService.update(userId, updateData);
   }
@@ -47,6 +51,7 @@ export class PreferencesController {
     status: HttpStatus.NO_CONTENT, 
     description: 'Preferences deleted successfully' 
   })
+  @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'User preferences not found' })
   remove(@Param('userId') userId: string) {
     return this.preferencesService.remove(userId);
   }
