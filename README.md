@@ -1,51 +1,38 @@
 # User Notification Preferences API
 
-A NestJS-based API for managing user notification preferences and sending notifications.
+This project is a Nest.js API for managing user notification preferences and sending notifications. The system handles user preferences for different notification types and manages notification delivery settings.
 
-## Features
+## Table of Contents
 
-- CRUD operations for user preferences
-- Notification sending simulation
-- Request validation
-- OpenAPI/Swagger documentation
-- MongoDB integration
-- Unit tests
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+  - [Clone the Repository](#clone-the-repository)
+  - [Install Dependencies](#install-dependencies)
+  - [Configure Environment Variables](#configure-environment-variables)
+  - [Run the Application](#run-the-application)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Deploy to Vercel](#deploy-to-vercel)
+  - [Deploy to AWS Lambda](#deploy-to-aws-lambda)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (v14.x or later)
+- npm (v6.x or later)
+- MongoDB (running locally or accessible via a URI)
+- Git
 
 ## Setup
 
-1. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+### Clone the Repository
 
-2. Set up environment variables:
-Create a .env file with:
-\`\`\`
-MONGODB_URI=mongodb://localhost/notifications
-\`\`\`
+Clone the repository to your local machine:
 
-3. Run the development server:
-\`\`\`bash
-npm run dev
-\`\`\`
-
-4. Access the Swagger documentation at http://localhost:3000/api
-
-## API Endpoints
-
-### User Preferences
-- POST /api/preferences - Create user preferences
-- GET /api/preferences/:userId - Get user preferences
-- PATCH /api/preferences/:userId - Update user preferences
-- DELETE /api/preferences/:userId - Delete user preferences
-
-### Testing
-
-Run tests:
-\`\`\`bash
-npm test
-\`\`\`
-
-## Deployment
-
-This API can be deployed to Vercel or AWS Lambda. Configuration files are included for serverless deployment.
+```bash
+git clone https://github.com/yourusername/user-notification-preferences.git
+cd user-notification-preferences
