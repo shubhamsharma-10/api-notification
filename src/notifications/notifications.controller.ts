@@ -1,8 +1,8 @@
 // src/notifications/notifications.controller.ts
-
 import { Controller, Post, Get, Body, Param } from '@nestjs/common';
 import { NotificationsService } from './notifications.service';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { CreateNotificationDto } from './dto/create-notification.dto';
 
 @ApiTags('notifications')
 @Controller('api/notifications')
@@ -11,7 +11,8 @@ export class NotificationsController {
 
   @Post('send')
   @ApiOperation({ summary: 'Send a notification' })
-  async sendNotification(@Body() notificationDto: any) {
+  @ApiResponse({ status: 201, description: 'Notification sent successfully' })
+  async sendNotification(@Body() notificationDto: CreateNotificationDto) {
     return this.notificationsService.sendNotification(notificationDto);
   }
 

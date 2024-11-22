@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Param, HttpStatus, HttpCode } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { PreferencesService } from './preferences.service';
 import { CreatePreferenceDto } from './dto/create-preference.dto';
@@ -46,13 +46,15 @@ export class PreferencesController {
   }
 
   @Delete(':userId')
+  @HttpCode(HttpStatus.NO_CONTENT) // Add this line
   @ApiOperation({ summary: 'Delete user preferences' })
   @ApiResponse({ 
     status: HttpStatus.NO_CONTENT, 
     description: 'Preferences deleted successfully' 
   })
   @ApiResponse({ status: HttpStatus.NOT_FOUND, description: 'User preferences not found' })
-  remove(@Param('userId') userId: string) {
-    return this.preferencesService.remove(userId);
+  async remove(@Param('userId') userId: string): Promise<void> { // Change return type to Promise<void>
+    await this.preferencesService.remove(userId);
+    return;
   }
 }
